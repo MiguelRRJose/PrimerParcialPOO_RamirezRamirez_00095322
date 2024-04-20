@@ -1,23 +1,17 @@
-// Clase concreta para teléfonos móviles
-public class TelefonoMovil extends ArticuloElectronico {
-    private String marca;
-    private String almacenamiento;
-    private double precio;
+public class TelefonoMovil extends ArticuloElectronicoAbstracto {
+    private String tamanoPantalla;
+    private String procesador;
 
-    public TelefonoMovil(String nombre, String modelo, String marca, String almacenamiento, double precio) {
-        super(nombre, modelo);
-        this.marca = marca;
-        this.almacenamiento = almacenamiento;
-        this.precio = precio;
+    public TelefonoMovil(String nombre, String modelo, String descripcion, double precio, String tamanoPantalla, String procesador) {
+        super(nombre, modelo, descripcion, precio);
+        this.tamanoPantalla = tamanoPantalla;
+        this.procesador = procesador;
     }
 
     @Override
-    public double obtenerPrecio() {
-        return precio;
-    }
-
-    @Override
-    public String obtenerDescripcion() {
-        return nombre + " " + modelo + " - " + marca + ", " + almacenamiento;
+    public String toString() {
+        return super.toString() + "\n" +
+                "Tamaño de Pantalla: " + tamanoPantalla + "\n" +
+                "Procesador: " + procesador;
     }
 }

@@ -1,23 +1,23 @@
-// Clase concreta para laptops
-public class Laptop extends ArticuloElectronico {
-    private String marca;
+public class Laptop extends ArticuloElectronicoAbstracto {
+    private String tamanoPantalla;
     private String procesador;
-    private double precio;
+    private int ram;
+    private int almacenamiento;
 
-    public Laptop(String nombre, String modelo, String marca, String procesador, double precio) {
-        super(nombre, modelo);
-        this.marca = marca;
+    public Laptop(String nombre, String modelo, String descripcion, double precio, String tamanoPantalla, String procesador, int ram, int almacenamiento) {
+        super(nombre, modelo, descripcion, precio);
+        this.tamanoPantalla = tamanoPantalla;
         this.procesador = procesador;
-        this.precio = precio;
+        this.ram = ram;
+        this.almacenamiento = almacenamiento;
     }
 
     @Override
-    public double obtenerPrecio() {
-        return precio;
-    }
-
-    @Override
-    public String obtenerDescripcion() {
-        return nombre + " " + modelo + " - " + marca + ", " + procesador;
+    public String toString() {
+        return super.toString() + "\n" +
+                "Tamaño de Pantalla: " + tamanoPantalla + "\n" +
+                "Procesador: " + procesador + "\n" +
+                "RAM: " + ram + "GB\n" +
+                "Almacenamiento: " + almacenamiento + "GB";
     }
 }
